@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>889</width>
+    <width>984</width>
     <height>562</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>871</width>
+     <width>971</width>
      <height>541</height>
     </rect>
    </property>
@@ -34,22 +34,12 @@
     <attribute name="title">
      <string>Product </string>
     </attribute>
-    <widget class="QTableView" name="Tab_Prod">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>100</y>
-       <width>841</width>
-       <height>251</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>841</width>
+       <width>951</width>
        <height>80</height>
       </rect>
      </property>
@@ -94,7 +84,7 @@
        <rect>
         <x>410</x>
         <y>30</y>
-        <width>421</width>
+        <width>531</width>
         <height>41</height>
        </rect>
       </property>
@@ -137,65 +127,12 @@
       </layout>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>420</y>
-       <width>841</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="title">
-      <string>Controls </string>
-     </property>
-     <widget class="QWidget" name="horizontalLayoutWidget_3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>821</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QPushButton" name="Btn_Add">
-         <property name="text">
-          <string>ADD</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Btn_Edit">
-         <property name="text">
-          <string>EDIT</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Btn_Del">
-         <property name="text">
-          <string>DELET</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Btn_Print">
-         <property name="text">
-          <string>PRINT</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
     <widget class="QGroupBox" name="groupBox_3">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>360</y>
-       <width>841</width>
+       <y>450</y>
+       <width>951</width>
        <height>51</height>
       </rect>
      </property>
@@ -207,7 +144,7 @@
        <rect>
         <x>50</x>
         <y>20</y>
-        <width>751</width>
+        <width>881</width>
         <height>21</height>
        </rect>
       </property>
@@ -239,6 +176,164 @@
           <string>y</string>
          </property>
         </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>951</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Controls </string>
+     </property>
+     <widget class="QWidget" name="horizontalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>931</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QPushButton" name="Btn_Add">
+         <property name="text">
+          <string>ADD</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Btn_Save">
+         <property name="text">
+          <string>Save</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Btn_Del">
+         <property name="text">
+          <string>DELET</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Btn_Print">
+         <property name="text">
+          <string>PRINT</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>951</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Data</string>
+     </property>
+     <widget class="QTableView" name="Tab_Prod">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>10</y>
+        <width>651</width>
+        <height>271</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>271</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Id : </string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEdit_3"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Code : </string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_4"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Item Name :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_5"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>QuantityAvailable :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEdit_6"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Type :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="comboBox"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Price :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="lineEdit_7"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Expiration Date :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QDateEdit" name="dateEdit"/>
        </item>
       </layout>
      </widget>

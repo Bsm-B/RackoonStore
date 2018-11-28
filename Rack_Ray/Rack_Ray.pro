@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         ray.cpp \
-    connxion.cpp
+    connxion.cpp \
+    material.cpp
 
 HEADERS += \
         ray.h \
-    connxion.h
+    connxion.h \
+    material.h
 
 FORMS += \
         ray.ui

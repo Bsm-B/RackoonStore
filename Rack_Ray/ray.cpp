@@ -10,5 +10,6 @@ Ray::Ray(QWidget *parent) :
 
 Ray::~Ray()
 {
+
     delete ui;
 }

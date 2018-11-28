@@ -8,9 +8,9 @@ bool Connxion::Open_db()
 {
     bool Test(false);
     MyDatabase = QSqlDatabase::addDatabase("QODBC");
-    MyDatabase.setDatabaseName("xxx");
-    MyDatabase.setUserName("xxx");//inserer nom de l'utilisateur
-    MyDatabase.setPassword("xxx");//inserer mot de passe de cet utilisateur
+    MyDatabase.setDatabaseName("Project");
+    MyDatabase.setUserName("bsx");
+    MyDatabase.setPassword("google2100");
     if (MyDatabase.open()) Test=true;
     return  Test;
 }

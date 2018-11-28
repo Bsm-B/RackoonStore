@@ -22,7 +22,10 @@ public:
     QSqlQueryModel * Display();
     bool Add();
     bool Delete(int);
-
+    bool Check(int);
+   int  Get_Count();
+   int Get_Sum();
+   int Get_Qtn();
 
 
 };

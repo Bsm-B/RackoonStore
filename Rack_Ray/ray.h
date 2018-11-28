@@ -1,6 +1,7 @@
 #ifndef RAY_H
 #define RAY_H
 #include "material.h"
+#include <QMessageBox>
 #include <QWidget>
 
 namespace Ui {
@@ -23,6 +24,8 @@ private slots:
     void on_Btn_Save_clicked();
 
     void on_Btn_Del_clicked();
+
+    void on_Tab_Prod_activated(const QModelIndex &index);
 
 private:
     Ui::Ray *ui;

@@ -177,6 +177,20 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Total Quantity:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>z</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>

@@ -52,6 +52,8 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
+    QLabel *label_13;
+    QLabel *label_14;
     QGroupBox *groupBox_2;
     QWidget *horizontalLayoutWidget_3;
     QHBoxLayout *horizontalLayout_3;
@@ -180,6 +182,16 @@ public:
         label_5->setObjectName(QStringLiteral("label_5"));
 
         horizontalLayout_4->addWidget(label_5);
+
+        label_13 = new QLabel(layoutWidget);
+        label_13->setObjectName(QStringLiteral("label_13"));
+
+        horizontalLayout_4->addWidget(label_13);
+
+        label_14 = new QLabel(layoutWidget);
+        label_14->setObjectName(QStringLiteral("label_14"));
+
+        horizontalLayout_4->addWidget(label_14);
 
         groupBox_2 = new QGroupBox(tab_2);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
@@ -324,6 +336,8 @@ public:
         label_3->setText(QApplication::translate("Ray", "x", nullptr));
         label_4->setText(QApplication::translate("Ray", "Number of items:", nullptr));
         label_5->setText(QApplication::translate("Ray", "y", nullptr));
+        label_13->setText(QApplication::translate("Ray", "Total Quantity:", nullptr));
+        label_14->setText(QApplication::translate("Ray", "z", nullptr));
         groupBox_2->setTitle(QApplication::translate("Ray", "Controls ", nullptr));
         Btn_Add->setText(QApplication::translate("Ray", "ADD", nullptr));
         Btn_Save->setText(QApplication::translate("Ray", "Save", nullptr));

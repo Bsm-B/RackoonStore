@@ -1,5 +1,5 @@
 #include "material.h"
-
+#include <QDebug>
 Material::Material()
 {
     this->Id = 0;
@@ -41,22 +41,39 @@ QSqlQueryModel * Material::Display(){
         return model;
 }
 
+bool Material::Check(int idd)
+{
+    QSqlQuery test;
+    test.prepare("select ID from Item where ID = :search");
+    test.bindValue(":search", QString::number(idd));
+    return test.exec();
+}
+
 
 bool Material::Add(){
 
-    QSqlQuery query;
+    int newId(0);
+    QSqlQuery query,make;
+    make.prepare("Select max(id) from Item");
+
+    if(make.exec()){
+        while (make.next())
+        {
+           newId = make.value(0).toInt();
+        }
+        qDebug()  << QString::number(newId);
+        newId++;
+    }
+    qDebug() << QString::number(newId);
     query.prepare("INSERT INTO ITEM (ID,\"Code\",\"Name\",\"Type\",\"Price\",\"Quantity\",\"Date\")"
-                        "VALUES (:id, :code, :name, :type, :price, :quantity, TO_DATE('" +Expiration_Date.toString("yyyy/MM/dd") +"', 'yyyy/mm/dd hh24:mi:ss'))");
-    query.bindValue(":id", QString::number(Id));
-    query.bindValue(":code", Code);
-    query.bindValue(":name", Item_Name);
-    query.bindValue(":type", Type);
-    query.bindValue(":price", QString::number(Price));
-    query.bindValue(":quantity", QString::number(Quantity));
+                        "VALUES (:id, :code, :name, :type, :price, :quantity, TO_DATE('" + QDate::currentDate().toString("yyyy/MM/dd") +"', 'yyyy/mm/dd hh24:mi:ss'))");
+    query.bindValue(":id", QString::number(newId));
+    query.bindValue(":code", "Code");
+    query.bindValue(":name", "Item_Name");
+    query.bindValue(":type", "Family");
+    query.bindValue(":price", "00.0");
+    query.bindValue(":quantity", "0");
     return query.exec();
-
-
-
 }
 
 bool Material::Delete(int idd){
@@ -67,3 +84,60 @@ bool Material::Delete(int idd){
     query.bindValue(":id", ID);
     return    query.exec();
 }
+
+
+
+int Material::Get_Count()
+{
+    QSqlQuery query;
+    int result(0);
+    query.prepare("select count(id) from item");
+    if (query.exec())
+    {
+        while (query.next())
+        {
+             result = query.value(0).toInt();
+             return  result;
+        }
+    }
+
+        return  result;
+}
+
+
+int Material::Get_Sum()
+{
+    QSqlQuery query;
+    int result(0);
+    query.prepare("select sum(\"Price\") from item");
+    if (query.exec())
+    {
+        while (query.next())
+        {
+             result = query.value(0).toInt();
+             return  result;
+        }
+    }
+
+        return  result;
+}
+
+int Material::Get_Qtn()
+{
+    QSqlQuery query;
+    int result(0);
+    query.prepare("select sum(\"Quantity\") from item");
+    if (query.exec())
+    {
+        while (query.next())
+        {
+             result = query.value(0).toInt();
+             return  result;
+        }
+    }
+
+        return  result;
+}
+
+
+

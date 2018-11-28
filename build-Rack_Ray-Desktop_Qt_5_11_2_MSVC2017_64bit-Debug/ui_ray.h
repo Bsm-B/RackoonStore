@@ -40,7 +40,7 @@ public:
     QLineEdit *lineEdit_2;
     QWidget *horizontalLayoutWidget_2;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButton;
+    QPushButton *Serach_Btn;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
@@ -127,10 +127,10 @@ public:
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(horizontalLayoutWidget_2);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        Serach_Btn = new QPushButton(horizontalLayoutWidget_2);
+        Serach_Btn->setObjectName(QStringLiteral("Serach_Btn"));
 
-        horizontalLayout_2->addWidget(pushButton);
+        horizontalLayout_2->addWidget(Serach_Btn);
 
         pushButton_3 = new QPushButton(horizontalLayoutWidget_2);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
@@ -245,6 +245,7 @@ public:
 
         box_id = new QLineEdit(formLayoutWidget);
         box_id->setObjectName(QStringLiteral("box_id"));
+        box_id->setReadOnly(true);
 
         formLayout->setWidget(0, QFormLayout::FieldRole, box_id);
 
@@ -326,10 +327,10 @@ public:
         lineEdit->setText(QApplication::translate("Ray", "Search By ID", nullptr));
         label->setText(QApplication::translate("Ray", "Or", nullptr));
         lineEdit_2->setText(QApplication::translate("Ray", "Search By Name", nullptr));
-        pushButton->setText(QApplication::translate("Ray", "Search", nullptr));
-        pushButton_3->setText(QApplication::translate("Ray", "Sort by Date", nullptr));
-        pushButton_4->setText(QApplication::translate("Ray", "Sort By ", nullptr));
-        pushButton_5->setText(QApplication::translate("Ray", "Sort By", nullptr));
+        Serach_Btn->setText(QApplication::translate("Ray", "Search", nullptr));
+        pushButton_3->setText(QApplication::translate("Ray", "Sort by ID", nullptr));
+        pushButton_4->setText(QApplication::translate("Ray", "Sort By  Code", nullptr));
+        pushButton_5->setText(QApplication::translate("Ray", "Sort By Name", nullptr));
         pushButton_2->setText(QApplication::translate("Ray", "Cancel", nullptr));
         groupBox_3->setTitle(QApplication::translate("Ray", "Information ", nullptr));
         label_2->setText(QApplication::translate("Ray", "Total Selling Price :", nullptr));

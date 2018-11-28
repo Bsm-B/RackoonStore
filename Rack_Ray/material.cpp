@@ -41,6 +41,30 @@ QSqlQueryModel * Material::Display(){
         return model;
 }
 
+bool Material::Update()
+{
+    QSqlQuery query;
+    QString StrID = QString::number(Id);
+      query.prepare("UPDATE ITEM SET "
+                    " \"Code\" = :code,  \"Name\" = :name,"
+                    "\"Type\" = :type,   \"Price\"= :price, \"Quantity\" = :quantity,"
+                    "\"Date\" = :date"
+                    " where ID = "+ StrID );
+    query.bindValue(":code", Code);
+    query.bindValue(":name", Item_Name);
+    query.bindValue(":type", Type);
+    query.bindValue(":price", QString::number(Price));
+    query.bindValue(":quantity", QString::number(Quantity));
+    QString DateFormat = Expiration_Date.toString("yyyy/MM/dd");
+    qDebug() << DateFormat;
+    query.bindValue(":date",Expiration_Date);
+    return query.exec();
+
+
+
+
+}
+
 bool Material::Check(int idd)
 {
     QSqlQuery test;
@@ -140,4 +164,57 @@ int Material::Get_Qtn()
 }
 
 
+QSqlQueryModel * Material::DisplayID()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT * FROM ITEM  ORDER BY ID");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Code"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Name"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Type"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("Price"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("Quantity"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("Date"));
+        return model;
+}
+QSqlQueryModel * Material::DisplayCode()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT * FROM ITEM  ORDER BY \"Code\" ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Code"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Name"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Type"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("Price"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("Quantity"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("Date"));
+        return model;
+}
+QSqlQueryModel * Material::DisplayName()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT * FROM ITEM  ORDER BY \"Name\" ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Code"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Name"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Type"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("Price"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("Quantity"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("Date"));
+        return model;
+}
 
+
+QSqlQueryModel * Material::Search(int i,QString n){
+
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT * FROM ITEM  Where ID = "+ n +" or \"Name\" = " + QString::number(i));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Code"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Name"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Type"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("Price"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("Quantity"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("Date"));
+        return model;
+}

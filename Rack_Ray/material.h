@@ -20,12 +20,19 @@ public:
     Material(int,QString,QString,int,QString,double,QDate);
     QSqlQueryModel * Get_Type();
     QSqlQueryModel * Display();
+    QSqlQueryModel * DisplayID();
+    QSqlQueryModel * DisplayCode();
+    QSqlQueryModel * DisplayName();
+    QSqlQueryModel * Search(int,QString);
+
+
     bool Add();
     bool Delete(int);
+    bool Update();
     bool Check(int);
-   int  Get_Count();
-   int Get_Sum();
-   int Get_Qtn();
+    int  Get_Count();
+    int Get_Sum();
+    int Get_Qtn();
 
 
 };

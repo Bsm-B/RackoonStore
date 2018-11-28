@@ -27,6 +27,16 @@ private slots:
 
     void on_Tab_Prod_activated(const QModelIndex &index);
 
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_Serach_Btn_clicked();
+
 private:
     Ui::Ray *ui;
     Material M;

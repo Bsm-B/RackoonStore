@@ -90,7 +90,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="Serach_Btn">
          <property name="text">
           <string>Search</string>
          </property>
@@ -99,21 +99,21 @@
        <item>
         <widget class="QPushButton" name="pushButton_3">
          <property name="text">
-          <string>Sort by Date</string>
+          <string>Sort by ID</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_4">
          <property name="text">
-          <string>Sort By </string>
+          <string>Sort By  Code</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_5">
          <property name="text">
-          <string>Sort By</string>
+          <string>Sort By Name</string>
          </property>
         </widget>
        </item>
@@ -287,7 +287,11 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="box_id"/>
+        <widget class="QLineEdit" name="box_id">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_7">

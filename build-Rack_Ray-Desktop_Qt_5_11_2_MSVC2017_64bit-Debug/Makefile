@@ -243,6 +243,7 @@ Makefile: ..\Rack_Ray\Rack_Ray.pro D:\NEW\5.11.2\msvc2017_64\mkspecs\win32-msvc\
 		D:\NEW\5.11.2\msvc2017_64\mkspecs\features\lex.prf \
 		..\Rack_Ray\Rack_Ray.pro \
 		D:\NEW\5.11.2\msvc2017_64\lib\qtmaind.prl \
+		D:\NEW\5.11.2\msvc2017_64\lib\Qt5PrintSupport.prl \
 		D:\NEW\5.11.2\msvc2017_64\lib\Qt5Widgets.prl \
 		D:\NEW\5.11.2\msvc2017_64\lib\Qt5Gui.prl \
 		D:\NEW\5.11.2\msvc2017_64\lib\Qt5Sql.prl \
@@ -416,6 +417,7 @@ D:\NEW\5.11.2\msvc2017_64\mkspecs\features\yacc.prf:
 D:\NEW\5.11.2\msvc2017_64\mkspecs\features\lex.prf:
 ..\Rack_Ray\Rack_Ray.pro:
 D:\NEW\5.11.2\msvc2017_64\lib\qtmaind.prl:
+D:\NEW\5.11.2\msvc2017_64\lib\Qt5PrintSupport.prl:
 D:\NEW\5.11.2\msvc2017_64\lib\Qt5Widgets.prl:
 D:\NEW\5.11.2\msvc2017_64\lib\Qt5Gui.prl:
 D:\NEW\5.11.2\msvc2017_64\lib\Qt5Sql.prl:

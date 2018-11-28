@@ -56,7 +56,6 @@ bool Material::Update()
     query.bindValue(":price", QString::number(Price));
     query.bindValue(":quantity", QString::number(Quantity));
     QString DateFormat = Expiration_Date.toString("yyyy/MM/dd");
-    qDebug() << DateFormat;
     query.bindValue(":date",Expiration_Date);
     return query.exec();
 
@@ -208,8 +207,6 @@ QSqlQueryModel * Material::DisplayName()
 QSqlQueryModel * Material::Search(int i,QString n){
 
     QSqlQueryModel * model= new QSqlQueryModel();
-    qDebug() <<  QString::number(i);
-    qDebug() <<  n;
     model->setQuery("SELECT * FROM ITEM Where ID = " + QString::number(i)+ "OR \"Code\" = '"+ n+ "'");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Code"));

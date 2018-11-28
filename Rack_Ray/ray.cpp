@@ -1,7 +1,9 @@
 #include "ray.h"
 #include "ui_ray.h"
-
-
+#include <QPrinter>
+#include <QTextDocument>
+#include <QPrintDialog>
+#include "add_type.h"
 Ray::Ray(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Ray)
@@ -129,6 +131,70 @@ void Ray::on_pushButton_2_clicked()
 
 void Ray::on_Serach_Btn_clicked()
 {
+
     ui->Tab_Prod->setModel(M.Search(ui->lineEdit->text().toInt(),ui->lineEdit_2->text()));
 
+}
+
+void Ray::on_Btn_Print_clicked()
+{
+    QString strStream;
+    QTextStream out(&strStream);
+
+    const int rowCount = ui->Tab_Prod->model()->rowCount();
+    const int columnCount = ui->Tab_Prod->model()->columnCount();
+    QString TT = QDate::currentDate().toString("yyyy/MM/dd");
+    out <<"<html>\n"
+          "<head>\n"
+           "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+        << "<title>Rackoonstore - Item List</title>\n "
+        << "</head>\n"
+        "<body bgcolor=#ffffff link=#5000A0>\n"
+        "<h1 style=\"text-align: center;\"><strong>LIST ITEL "+TT+"</strong></h1>"
+        "<table style=\"text-align: center; font-size: 18px;\" border=0>\n "
+          "</br> </br>";
+    // headers
+    out << "<thead><tr bgcolor=#d6e5ff>";
+    for (int column = 0; column < columnCount; column++)
+        if (!ui->Tab_Prod->isColumnHidden(column))
+            out << QString("<th>%1</th>").arg(ui->Tab_Prod->model()->headerData(column, Qt::Horizontal).toString());
+    out << "</tr></thead>\n";
+
+    // data table
+    for (int row = 0; row < rowCount; row++) {
+        out << "<tr>";
+        for (int column = 0; column < columnCount; column++) {
+            if (!ui->Tab_Prod->isColumnHidden(column)) {
+                QString data =ui->Tab_Prod->model()->data(ui->Tab_Prod->model()->index(row, column)).toString().simplified();
+                out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+            }
+        }
+        out << "</tr>\n";
+    }
+    out <<  "</table>\n"
+        "</body>\n"
+        "</html>\n";
+
+    QTextDocument *document = new QTextDocument();
+    document->setHtml(strStream);
+
+    QPrinter printer;
+
+    QPrintDialog *dialog = new QPrintDialog(&printer, NULL);
+    if (dialog->exec() == QDialog::Accepted) {
+        document->print(&printer);
+    }
+
+    delete document;
+}
+
+void Ray::on_pushButton_6_clicked()
+{
+    D = new DialogType(this);
+    D->TDis();
+    D->show();
+}
+void Ray::UpdateChech(){
+
+    ui->comboBox_type->setModel(M.Get_Type());
 }

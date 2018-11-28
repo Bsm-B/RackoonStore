@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,15 +28,20 @@ SOURCES += \
         main.cpp \
         ray.cpp \
     connxion.cpp \
-    material.cpp
+    material.cpp \
+    type.cpp \
+    dialogtype.cpp
 
 HEADERS += \
         ray.h \
     connxion.h \
-    material.h
+    material.h \
+    type.h \
+    dialogtype.h
 
 FORMS += \
-        ray.ui
+        ray.ui \
+    dialogtype.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

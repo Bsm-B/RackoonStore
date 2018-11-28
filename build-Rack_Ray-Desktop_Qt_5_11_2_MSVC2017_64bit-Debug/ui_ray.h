@@ -74,11 +74,13 @@ public:
     QLabel *label_9;
     QLineEdit *box_quantity;
     QLabel *label_10;
-    QComboBox *comboBox_type;
     QLabel *label_11;
     QLineEdit *box_price;
     QLabel *label_12;
     QDateEdit *dateEdit;
+    QHBoxLayout *horizontalLayout_6;
+    QComboBox *comboBox_type;
+    QPushButton *pushButton_6;
 
     void setupUi(QWidget *Ray)
     {
@@ -284,30 +286,41 @@ public:
 
         formLayout->setWidget(4, QFormLayout::LabelRole, label_10);
 
-        comboBox_type = new QComboBox(formLayoutWidget);
-        comboBox_type->setObjectName(QStringLiteral("comboBox_type"));
-
-        formLayout->setWidget(4, QFormLayout::FieldRole, comboBox_type);
-
         label_11 = new QLabel(formLayoutWidget);
         label_11->setObjectName(QStringLiteral("label_11"));
 
-        formLayout->setWidget(5, QFormLayout::LabelRole, label_11);
+        formLayout->setWidget(6, QFormLayout::LabelRole, label_11);
 
         box_price = new QLineEdit(formLayoutWidget);
         box_price->setObjectName(QStringLiteral("box_price"));
 
-        formLayout->setWidget(5, QFormLayout::FieldRole, box_price);
+        formLayout->setWidget(6, QFormLayout::FieldRole, box_price);
 
         label_12 = new QLabel(formLayoutWidget);
         label_12->setObjectName(QStringLiteral("label_12"));
 
-        formLayout->setWidget(6, QFormLayout::LabelRole, label_12);
+        formLayout->setWidget(7, QFormLayout::LabelRole, label_12);
 
         dateEdit = new QDateEdit(formLayoutWidget);
         dateEdit->setObjectName(QStringLiteral("dateEdit"));
 
-        formLayout->setWidget(6, QFormLayout::FieldRole, dateEdit);
+        formLayout->setWidget(7, QFormLayout::FieldRole, dateEdit);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        comboBox_type = new QComboBox(formLayoutWidget);
+        comboBox_type->setObjectName(QStringLiteral("comboBox_type"));
+
+        horizontalLayout_6->addWidget(comboBox_type);
+
+        pushButton_6 = new QPushButton(formLayoutWidget);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+
+        horizontalLayout_6->addWidget(pushButton_6);
+
+
+        formLayout->setLayout(4, QFormLayout::FieldRole, horizontalLayout_6);
 
         tabWidget->addTab(tab_2, QString());
 
@@ -322,7 +335,7 @@ public:
     void retranslateUi(QWidget *Ray)
     {
         Ray->setWindowTitle(QApplication::translate("Ray", "Ray", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Ray", "Tab 1", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Ray", "Rayon", nullptr));
         groupBox->setTitle(QApplication::translate("Ray", "Tools", nullptr));
         lineEdit->setText(QApplication::translate("Ray", "Search By ID", nullptr));
         label->setText(QApplication::translate("Ray", "Or", nullptr));
@@ -352,6 +365,7 @@ public:
         label_10->setText(QApplication::translate("Ray", "Type :", nullptr));
         label_11->setText(QApplication::translate("Ray", "Price :", nullptr));
         label_12->setText(QApplication::translate("Ray", "Expiration Date :", nullptr));
+        pushButton_6->setText(QApplication::translate("Ray", "ADD Type", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Ray", "Product ", nullptr));
     } // retranslateUi
 

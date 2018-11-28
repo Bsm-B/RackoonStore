@@ -3,6 +3,7 @@
 #include "material.h"
 #include <QMessageBox>
 #include <QWidget>
+#include "dialogtype.h"
 
 namespace Ui {
 class Ray;
@@ -15,6 +16,7 @@ class Ray : public QWidget
 public:
     explicit Ray(QWidget *parent = nullptr);
     ~Ray();
+    void UpdateChech();
 protected:
     void showEvent(QShowEvent* event);
 
@@ -37,9 +39,14 @@ private slots:
 
     void on_Serach_Btn_clicked();
 
+    void on_Btn_Print_clicked();
+
+    void on_pushButton_6_clicked();
+
 private:
     Ui::Ray *ui;
     Material M;
+    DialogType * D;
 };
 
 #endif // RAY_H

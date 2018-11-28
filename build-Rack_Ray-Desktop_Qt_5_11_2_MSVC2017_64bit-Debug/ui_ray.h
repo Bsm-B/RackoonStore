@@ -64,17 +64,17 @@ public:
     QWidget *formLayoutWidget;
     QFormLayout *formLayout;
     QLabel *label_6;
-    QLineEdit *lineEdit_3;
+    QLineEdit *box_id;
     QLabel *label_7;
-    QLineEdit *lineEdit_4;
+    QLineEdit *box_code;
     QLabel *label_8;
-    QLineEdit *lineEdit_5;
+    QLineEdit *box_name;
     QLabel *label_9;
-    QLineEdit *lineEdit_6;
+    QLineEdit *box_quantity;
     QLabel *label_10;
-    QComboBox *comboBox;
+    QComboBox *comboBox_type;
     QLabel *label_11;
-    QLineEdit *lineEdit_7;
+    QLineEdit *box_price;
     QLabel *label_12;
     QDateEdit *dateEdit;
 
@@ -231,60 +231,60 @@ public:
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_6);
 
-        lineEdit_3 = new QLineEdit(formLayoutWidget);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        box_id = new QLineEdit(formLayoutWidget);
+        box_id->setObjectName(QStringLiteral("box_id"));
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit_3);
+        formLayout->setWidget(0, QFormLayout::FieldRole, box_id);
 
         label_7 = new QLabel(formLayoutWidget);
         label_7->setObjectName(QStringLiteral("label_7"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
 
-        lineEdit_4 = new QLineEdit(formLayoutWidget);
-        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+        box_code = new QLineEdit(formLayoutWidget);
+        box_code->setObjectName(QStringLiteral("box_code"));
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, lineEdit_4);
+        formLayout->setWidget(1, QFormLayout::FieldRole, box_code);
 
         label_8 = new QLabel(formLayoutWidget);
         label_8->setObjectName(QStringLiteral("label_8"));
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_8);
 
-        lineEdit_5 = new QLineEdit(formLayoutWidget);
-        lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+        box_name = new QLineEdit(formLayoutWidget);
+        box_name->setObjectName(QStringLiteral("box_name"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, lineEdit_5);
+        formLayout->setWidget(2, QFormLayout::FieldRole, box_name);
 
         label_9 = new QLabel(formLayoutWidget);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, label_9);
 
-        lineEdit_6 = new QLineEdit(formLayoutWidget);
-        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        box_quantity = new QLineEdit(formLayoutWidget);
+        box_quantity->setObjectName(QStringLiteral("box_quantity"));
 
-        formLayout->setWidget(3, QFormLayout::FieldRole, lineEdit_6);
+        formLayout->setWidget(3, QFormLayout::FieldRole, box_quantity);
 
         label_10 = new QLabel(formLayoutWidget);
         label_10->setObjectName(QStringLiteral("label_10"));
 
         formLayout->setWidget(4, QFormLayout::LabelRole, label_10);
 
-        comboBox = new QComboBox(formLayoutWidget);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox_type = new QComboBox(formLayoutWidget);
+        comboBox_type->setObjectName(QStringLiteral("comboBox_type"));
 
-        formLayout->setWidget(4, QFormLayout::FieldRole, comboBox);
+        formLayout->setWidget(4, QFormLayout::FieldRole, comboBox_type);
 
         label_11 = new QLabel(formLayoutWidget);
         label_11->setObjectName(QStringLiteral("label_11"));
 
         formLayout->setWidget(5, QFormLayout::LabelRole, label_11);
 
-        lineEdit_7 = new QLineEdit(formLayoutWidget);
-        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+        box_price = new QLineEdit(formLayoutWidget);
+        box_price->setObjectName(QStringLiteral("box_price"));
 
-        formLayout->setWidget(5, QFormLayout::FieldRole, lineEdit_7);
+        formLayout->setWidget(5, QFormLayout::FieldRole, box_price);
 
         label_12 = new QLabel(formLayoutWidget);
         label_12->setObjectName(QStringLiteral("label_12"));

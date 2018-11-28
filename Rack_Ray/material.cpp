@@ -27,7 +27,7 @@ QSqlQueryModel * Material::Get_Type(){
         return model;
 }
 
-QSqlQueryModel * Material::Afficher(){
+QSqlQueryModel * Material::Display(){
 
     QSqlQueryModel * model= new QSqlQueryModel();
     model->setQuery("select * from item");
@@ -42,7 +42,7 @@ QSqlQueryModel * Material::Afficher(){
 }
 
 
-bool Material::Ajouter(){
+bool Material::Add(){
 
     QSqlQuery query;
     query.prepare("INSERT INTO ITEM (ID,\"Code\",\"Name\",\"Type\",\"Price\",\"Quantity\",\"Date\")"
@@ -57,4 +57,13 @@ bool Material::Ajouter(){
 
 
 
+}
+
+bool Material::Delete(int idd){
+
+    QSqlQuery query;
+    QString ID = QString::number(idd);
+    query.prepare("Delete from Item where ID = :id ");
+    query.bindValue(":id", ID);
+    return    query.exec();
 }

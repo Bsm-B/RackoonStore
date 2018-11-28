@@ -20,6 +20,10 @@ protected:
 private slots:
     void on_Btn_Add_clicked();
 
+    void on_Btn_Save_clicked();
+
+    void on_Btn_Del_clicked();
+
 private:
     Ui::Ray *ui;
     Material M;

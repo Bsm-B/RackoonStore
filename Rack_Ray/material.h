@@ -19,8 +19,10 @@ public:
     Material();
     Material(int,QString,QString,int,QString,double,QDate);
     QSqlQueryModel * Get_Type();
-    QSqlQueryModel * Afficher();
-    bool Ajouter();
+    QSqlQueryModel * Display();
+    bool Add();
+    bool Delete(int);
+
 
 
 };

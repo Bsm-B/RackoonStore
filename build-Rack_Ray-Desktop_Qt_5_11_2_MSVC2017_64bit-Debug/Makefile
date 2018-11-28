@@ -217,6 +217,7 @@ Makefile: ..\Rack_Ray\Rack_Ray.pro D:\NEW\5.11.2\msvc2017_64\mkspecs\win32-msvc\
 		D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qt_config.prf \
 		D:\NEW\5.11.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf \
 		D:\NEW\5.11.2\msvc2017_64\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		D:\NEW\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds.prf \
 		D:\NEW\5.11.2\msvc2017_64\mkspecs\common\msvc-version.conf \
 		D:\NEW\5.11.2\msvc2017_64\mkspecs\features\toolchain.prf \
@@ -244,6 +245,7 @@ Makefile: ..\Rack_Ray\Rack_Ray.pro D:\NEW\5.11.2\msvc2017_64\mkspecs\win32-msvc\
 		D:\NEW\5.11.2\msvc2017_64\lib\qtmaind.prl \
 		D:\NEW\5.11.2\msvc2017_64\lib\Qt5Widgets.prl \
 		D:\NEW\5.11.2\msvc2017_64\lib\Qt5Gui.prl \
+		D:\NEW\5.11.2\msvc2017_64\lib\Qt5Sql.prl \
 		D:\NEW\5.11.2\msvc2017_64\lib\Qt5Core.prl
 	$(QMAKE) -o Makefile ..\Rack_Ray\Rack_Ray.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
 D:\NEW\5.11.2\msvc2017_64\mkspecs\features\spec_pre.prf:
@@ -388,6 +390,7 @@ D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qt_functions.prf:
 D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qt_config.prf:
 D:\NEW\5.11.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf:
 D:\NEW\5.11.2\msvc2017_64\mkspecs\features\spec_post.prf:
+.qmake.stash:
 D:\NEW\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds.prf:
 D:\NEW\5.11.2\msvc2017_64\mkspecs\common\msvc-version.conf:
 D:\NEW\5.11.2\msvc2017_64\mkspecs\features\toolchain.prf:
@@ -415,6 +418,7 @@ D:\NEW\5.11.2\msvc2017_64\mkspecs\features\lex.prf:
 D:\NEW\5.11.2\msvc2017_64\lib\qtmaind.prl:
 D:\NEW\5.11.2\msvc2017_64\lib\Qt5Widgets.prl:
 D:\NEW\5.11.2\msvc2017_64\lib\Qt5Gui.prl:
+D:\NEW\5.11.2\msvc2017_64\lib\Qt5Sql.prl:
 D:\NEW\5.11.2\msvc2017_64\lib\Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Rack_Ray\Rack_Ray.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"

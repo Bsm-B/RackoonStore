@@ -208,7 +208,9 @@ QSqlQueryModel * Material::DisplayName()
 QSqlQueryModel * Material::Search(int i,QString n){
 
     QSqlQueryModel * model= new QSqlQueryModel();
-    model->setQuery("SELECT * FROM ITEM  Where ID = "+ n +" or \"Name\" = " + QString::number(i));
+    qDebug() <<  QString::number(i);
+    qDebug() <<  n;
+    model->setQuery("SELECT * FROM ITEM Where ID = " + QString::number(i)+ "OR \"Code\" = '"+ n+ "'");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Code"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Name"));

@@ -31,7 +31,8 @@ SOURCES += \
     material.cpp \
     type.cpp \
     dialogtype.cpp \
-    notification.cpp
+    notification.cpp \
+    container.cpp
 
 HEADERS += \
         ray.h \
@@ -39,7 +40,8 @@ HEADERS += \
     material.h \
     type.h \
     dialogtype.h \
-    notification.h
+    notification.h \
+    container.h
 
 FORMS += \
         ray.ui \

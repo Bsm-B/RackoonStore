@@ -5,7 +5,7 @@
 #include <QMessageBox>
 #include <QWidget>
 #include "dialogtype.h"
-
+#include "container.h"
 namespace Ui {
 class Ray;
 }
@@ -46,11 +46,24 @@ private slots:
 
 
 
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_tableView_2_activated(const QModelIndex &index);
+
+    void on_pushButton_9_clicked();
+
+    void on_tableView_activated(const QModelIndex &index);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::Ray *ui;
     Material M;
     Notification N;
     DialogType * D;
+    container C;
 };
 
 #endif // RAY_H

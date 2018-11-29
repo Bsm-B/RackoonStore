@@ -5,6 +5,7 @@
 #include <QPrintDialog>
 #include "add_type.h"
 
+
 Ray::Ray(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Ray)
@@ -23,6 +24,8 @@ void Ray::showEvent(QShowEvent* event)
 {
 
      QWidget::showEvent( event );
+     ui->tableView_2->setModel(C.Display());
+     ui->comboBox->setModel(C.Get_Prodid());
      ui->tableView->setModel(N.Display());
      ui->comboBox_type->setModel(M.Get_Type());
      ui->dateEdit->setDate(QDate::currentDate());
@@ -198,7 +201,97 @@ void Ray::on_pushButton_6_clicked()
     D->show();
 }
 void Ray::UpdateChech(){
-
     ui->comboBox_type->setModel(M.Get_Type());
 }
 
+
+void Ray::on_pushButton_8_clicked()
+{
+    ui->lineEdit_3->setText("");
+     ui->lineEdit_4->setText("");
+      ui->lineEdit_6->setText("");
+       ui->lineEdit_7->setText("");
+       ui->comboBox->setModel(C.Get_Prodid());
+    C.Add();
+    ui->tableView_2->setModel(C.Display());
+}
+
+void Ray::on_pushButton_10_clicked()
+{
+    int id = ui->lineEdit_3->text().toInt();
+    bool Test= C.Delete(id);
+    if(Test)
+    {
+        ui->tableView_2->setModel(C.Display());//refresh
+        QString msg =  "Item N' " + ui->box_id->text() + " Deleted \n Click Cancel to Exit.";
+        QMessageBox::information(nullptr, QObject::tr("RackoonStore"),
+                          QObject::tr(qPrintable(msg)), QMessageBox::Cancel);
+
+    }
+    else
+    {
+        QMessageBox::critical(nullptr, QObject::tr("RackoonStore"),
+                          QObject::tr("E003: Can not delete !.\n"
+                        "Click Cancel to Exit."), QMessageBox::Cancel);
+    }
+
+
+}
+
+void Ray::on_tableView_2_activated(const QModelIndex &index)
+{
+    QString val = ui->tableView_2->model()->data(index).toString();
+    ui->tableView_2->selectRow(index.row());
+    QSqlQuery Q;
+    QString Rq = ("select * from CONT where ID = "+ val);
+    Q.prepare(Rq);
+   if (Q.exec())
+   {
+       while (Q.next())
+       {
+          ui->lineEdit_3->setText(Q.value(0).toString());
+          ui->comboBox->setCurrentText(Q.value(1).toString());
+          ui->lineEdit_6->setText(Q.value(2).toString());
+          ui->lineEdit_7->setText(Q.value(3).toString());
+          ui->lineEdit_4->setText(Q.value(4).toString());
+       }
+
+}
+}
+
+void Ray::on_pushButton_9_clicked()
+{
+    int tempid = ui->lineEdit_3->text().toInt();
+    int prod_id = ui->comboBox->currentText().toInt();
+    int qt_prod = ui->lineEdit_6->text().toInt();
+    float price = ui->lineEdit_7->text().toDouble();
+    QString alert = ui->lineEdit_4->text();
+    container C(tempid,prod_id,qt_prod,price,alert);
+    C.Update();
+    ui->tableView_2->setModel(C.Display());
+}
+
+void Ray::on_tableView_activated(const QModelIndex &index)
+{
+    QString val = ui->tableView->model()->data(index).toString();
+    ui->tableView->selectRow(index.row());
+    QSqlQuery Q;
+    QString Rq = ("select * from NOTIFI where ID = "+ val);
+    Q.prepare(Rq);
+   if (Q.exec())
+   {
+       while (Q.next())
+       {
+          ui->lineEdit_5->setText(Q.value(0).toString());
+       }
+
+}
+}
+
+void Ray::on_pushButton_clicked()
+{
+    int x = ui->lineEdit_5->text().toInt();
+    N.Delete(x);
+    ui->tableView->setModel(N.Display());
+    ui->lineEdit_5->setText("0");
+}

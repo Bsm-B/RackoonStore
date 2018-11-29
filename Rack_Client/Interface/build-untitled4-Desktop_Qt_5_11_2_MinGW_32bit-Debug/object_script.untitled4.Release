@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\ajouter.o
+./release\modifier.o
+./release\supprimer.o
+./release\mettreajour.o
+./release\moc_mainwindow.o
+./release\moc_ajouter.o
+./release\moc_modifier.o
+./release\moc_supprimer.o
+./release\moc_mettreajour.o
+);

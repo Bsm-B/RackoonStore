@@ -23,6 +23,7 @@ void Ray::showEvent(QShowEvent* event)
 {
 
      QWidget::showEvent( event );
+     ui->tableView->setModel(N.Display());
      ui->comboBox_type->setModel(M.Get_Type());
      ui->dateEdit->setDate(QDate::currentDate());
      ui->Tab_Prod->setModel(M.Display());
@@ -200,3 +201,4 @@ void Ray::UpdateChech(){
 
     ui->comboBox_type->setModel(M.Get_Type());
 }
+

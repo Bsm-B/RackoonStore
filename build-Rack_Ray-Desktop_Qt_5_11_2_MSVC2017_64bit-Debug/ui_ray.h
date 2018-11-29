@@ -32,8 +32,37 @@ public:
     QTabWidget *tabWidget;
     QWidget *tab;
     QGroupBox *groupBox_5;
-    QTableView *tableView;
     QGroupBox *groupBox_6;
+    QTabWidget *tabWidget_2;
+    QWidget *tab_3;
+    QTableView *tableView_2;
+    QWidget *formLayoutWidget_2;
+    QFormLayout *formLayout_2;
+    QLabel *label_16;
+    QLabel *label_17;
+    QLabel *label_20;
+    QLabel *label_18;
+    QLabel *label_19;
+    QLabel *label_21;
+    QLabel *label_15;
+    QLineEdit *lineEdit_3;
+    QLineEdit *lineEdit_4;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_6;
+    QLineEdit *lineEdit_7;
+    QLineEdit *lineEdit_8;
+    QLineEdit *lineEdit_9;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_9;
+    QPushButton *pushButton_8;
+    QPushButton *pushButton_9;
+    QPushButton *pushButton_10;
+    QGroupBox *groupBox_7;
+    QTableView *tableView;
+    QWidget *widget1;
+    QHBoxLayout *horizontalLayout_8;
+    QPushButton *pushButton;
+    QPushButton *pushButton_7;
     QWidget *tab_2;
     QGroupBox *groupBox;
     QWidget *horizontalLayoutWidget;
@@ -97,13 +126,144 @@ public:
         tab->setObjectName(QStringLiteral("tab"));
         groupBox_5 = new QGroupBox(tab);
         groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
-        groupBox_5->setGeometry(QRect(10, 10, 651, 321));
-        tableView = new QTableView(groupBox_5);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(10, 20, 631, 291));
+        groupBox_5->setGeometry(QRect(10, 10, 651, 291));
         groupBox_6 = new QGroupBox(tab);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
-        groupBox_6->setGeometry(QRect(10, 340, 801, 271));
+        groupBox_6->setGeometry(QRect(10, 310, 881, 311));
+        tabWidget_2 = new QTabWidget(groupBox_6);
+        tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
+        tabWidget_2->setGeometry(QRect(10, 20, 861, 281));
+        tab_3 = new QWidget();
+        tab_3->setObjectName(QStringLiteral("tab_3"));
+        tableView_2 = new QTableView(tab_3);
+        tableView_2->setObjectName(QStringLiteral("tableView_2"));
+        tableView_2->setGeometry(QRect(10, 40, 581, 201));
+        formLayoutWidget_2 = new QWidget(tab_3);
+        formLayoutWidget_2->setObjectName(QStringLiteral("formLayoutWidget_2"));
+        formLayoutWidget_2->setGeometry(QRect(600, 40, 241, 201));
+        formLayout_2 = new QFormLayout(formLayoutWidget_2);
+        formLayout_2->setSpacing(6);
+        formLayout_2->setContentsMargins(11, 11, 11, 11);
+        formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
+        formLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_16 = new QLabel(formLayoutWidget_2);
+        label_16->setObjectName(QStringLiteral("label_16"));
+
+        formLayout_2->setWidget(1, QFormLayout::LabelRole, label_16);
+
+        label_17 = new QLabel(formLayoutWidget_2);
+        label_17->setObjectName(QStringLiteral("label_17"));
+
+        formLayout_2->setWidget(2, QFormLayout::LabelRole, label_17);
+
+        label_20 = new QLabel(formLayoutWidget_2);
+        label_20->setObjectName(QStringLiteral("label_20"));
+
+        formLayout_2->setWidget(3, QFormLayout::LabelRole, label_20);
+
+        label_18 = new QLabel(formLayoutWidget_2);
+        label_18->setObjectName(QStringLiteral("label_18"));
+
+        formLayout_2->setWidget(4, QFormLayout::LabelRole, label_18);
+
+        label_19 = new QLabel(formLayoutWidget_2);
+        label_19->setObjectName(QStringLiteral("label_19"));
+
+        formLayout_2->setWidget(5, QFormLayout::LabelRole, label_19);
+
+        label_21 = new QLabel(formLayoutWidget_2);
+        label_21->setObjectName(QStringLiteral("label_21"));
+
+        formLayout_2->setWidget(6, QFormLayout::LabelRole, label_21);
+
+        label_15 = new QLabel(formLayoutWidget_2);
+        label_15->setObjectName(QStringLiteral("label_15"));
+
+        formLayout_2->setWidget(0, QFormLayout::LabelRole, label_15);
+
+        lineEdit_3 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+
+        formLayout_2->setWidget(0, QFormLayout::FieldRole, lineEdit_3);
+
+        lineEdit_4 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+
+        formLayout_2->setWidget(6, QFormLayout::FieldRole, lineEdit_4);
+
+        lineEdit_5 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+
+        formLayout_2->setWidget(5, QFormLayout::FieldRole, lineEdit_5);
+
+        lineEdit_6 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+
+        formLayout_2->setWidget(4, QFormLayout::FieldRole, lineEdit_6);
+
+        lineEdit_7 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+
+        formLayout_2->setWidget(3, QFormLayout::FieldRole, lineEdit_7);
+
+        lineEdit_8 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
+
+        formLayout_2->setWidget(1, QFormLayout::FieldRole, lineEdit_8);
+
+        lineEdit_9 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
+
+        formLayout_2->setWidget(2, QFormLayout::FieldRole, lineEdit_9);
+
+        widget = new QWidget(tab_3);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(0, 0, 851, 31));
+        horizontalLayout_9 = new QHBoxLayout(widget);
+        horizontalLayout_9->setSpacing(6);
+        horizontalLayout_9->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        horizontalLayout_9->setContentsMargins(0, 0, 0, 0);
+        pushButton_8 = new QPushButton(widget);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+
+        horizontalLayout_9->addWidget(pushButton_8);
+
+        pushButton_9 = new QPushButton(widget);
+        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+
+        horizontalLayout_9->addWidget(pushButton_9);
+
+        pushButton_10 = new QPushButton(widget);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+
+        horizontalLayout_9->addWidget(pushButton_10);
+
+        tabWidget_2->addTab(tab_3, QString());
+        groupBox_7 = new QGroupBox(tab);
+        groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
+        groupBox_7->setGeometry(QRect(670, 10, 311, 301));
+        tableView = new QTableView(groupBox_7);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(10, 50, 291, 241));
+        widget1 = new QWidget(groupBox_7);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(10, 20, 291, 25));
+        horizontalLayout_8 = new QHBoxLayout(widget1);
+        horizontalLayout_8->setSpacing(6);
+        horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        horizontalLayout_8->setContentsMargins(0, 0, 0, 0);
+        pushButton = new QPushButton(widget1);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        horizontalLayout_8->addWidget(pushButton);
+
+        pushButton_7 = new QPushButton(widget1);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+
+        horizontalLayout_8->addWidget(pushButton_7);
+
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -339,6 +499,7 @@ public:
         retranslateUi(Ray);
 
         tabWidget->setCurrentIndex(0);
+        tabWidget_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Ray);
@@ -348,7 +509,21 @@ public:
     {
         Ray->setWindowTitle(QApplication::translate("Ray", "Ray", nullptr));
         groupBox_5->setTitle(QApplication::translate("Ray", "Schema - 2D ", nullptr));
-        groupBox_6->setTitle(QApplication::translate("Ray", "GroupBox", nullptr));
+        groupBox_6->setTitle(QApplication::translate("Ray", "Mangement", nullptr));
+        label_16->setText(QApplication::translate("Ray", "Zone ID:", nullptr));
+        label_17->setText(QApplication::translate("Ray", "Item ID :", nullptr));
+        label_20->setText(QApplication::translate("Ray", "Price :", nullptr));
+        label_18->setText(QApplication::translate("Ray", "Max Quantity :", nullptr));
+        label_19->setText(QApplication::translate("Ray", "Quantity Buy :", nullptr));
+        label_21->setText(QApplication::translate("Ray", "Alert :", nullptr));
+        label_15->setText(QApplication::translate("Ray", "Container ID :    ", nullptr));
+        pushButton_8->setText(QApplication::translate("Ray", "ADD", nullptr));
+        pushButton_9->setText(QApplication::translate("Ray", "SAVE", nullptr));
+        pushButton_10->setText(QApplication::translate("Ray", "DELETE", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_3), QApplication::translate("Ray", "Container", nullptr));
+        groupBox_7->setTitle(QApplication::translate("Ray", "Notifications", nullptr));
+        pushButton->setText(QApplication::translate("Ray", "Delete", nullptr));
+        pushButton_7->setText(QApplication::translate("Ray", "Logs", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Ray", "Rayon", nullptr));
         groupBox->setTitle(QApplication::translate("Ray", "Tools", nullptr));
         lineEdit->setText(QApplication::translate("Ray", "Search By ID", nullptr));

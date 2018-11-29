@@ -12,7 +12,7 @@ Notification::Notification(QString text, QString type)
     this->Type = type;
 }
 
-int Notification::Add(){
+bool Notification::Add(){
     QSqlQuery query;
     query.prepare("INSERT INTO Notifi (ID, INFO, TYPE) "
                         "VALUES (:info, :type)");
@@ -30,7 +30,7 @@ model->setHeaderData(2, Qt::Horizontal, QObject::tr("Type"));
     return model;
 }
 
-int Notification::Delete(int idd){
+bool Notification::Delete(int idd){
     QSqlQuery query;
     QString sid= QString::number(idd);
     query.prepare("Delete from Notifi where ID = :id ");

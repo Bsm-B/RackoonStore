@@ -44,6 +44,8 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+
+
 private:
     Ui::Ray *ui;
     Material M;

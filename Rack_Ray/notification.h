@@ -9,8 +9,8 @@ class Notification
 public:
     Notification();
     Notification(QString,QString);
-    int Add();
-    int Delete(int);
+    bool Add();
+    bool Delete(int);
     QSqlQueryModel * Display();
 private:
     int ID = 0;

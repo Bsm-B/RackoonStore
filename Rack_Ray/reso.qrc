@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new">
+        <file>Qss/error.wav</file>
+    </qresource>
+</RCC>

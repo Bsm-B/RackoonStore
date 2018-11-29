@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql printsupport
+QT       += core gui sql printsupport multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -32,7 +32,8 @@ SOURCES += \
     type.cpp \
     dialogtype.cpp \
     notification.cpp \
-    container.cpp
+    container.cpp \
+    Qss/Qss.cpp
 
 HEADERS += \
         ray.h \
@@ -41,7 +42,8 @@ HEADERS += \
     type.h \
     dialogtype.h \
     notification.h \
-    container.h
+    container.h \
+    Qss/Qss.h
 
 FORMS += \
         ray.ui \
@@ -51,3 +53,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Qss/qss.qrc

@@ -4,6 +4,8 @@
 #include "notification.h"
 #include <QMessageBox>
 #include <QWidget>
+#include <QTimer>
+
 #include "dialogtype.h"
 #include "container.h"
 namespace Ui {
@@ -22,6 +24,9 @@ protected:
     void showEvent(QShowEvent* event);
 
 private slots:
+
+    void refrech();
+
     void on_Btn_Add_clicked();
 
     void on_Btn_Save_clicked();
@@ -58,12 +63,15 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButton_11_clicked();
+
 private:
     Ui::Ray *ui;
     Material M;
     Notification N;
     DialogType * D;
     container C;
+    QTimer * timer;
 };
 
 #endif // RAY_H

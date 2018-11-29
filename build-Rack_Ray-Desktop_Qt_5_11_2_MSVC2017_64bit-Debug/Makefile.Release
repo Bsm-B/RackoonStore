@@ -11,13 +11,13 @@ MAKEFILE      = Makefile.Release
 
 CC            = cl
 CXX           = cl
-DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB -DNDEBUG
+DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DNDEBUG
 CFLAGS        = -nologo -Zc:wchar_t -FS -Zc:strictStrings -O2 -MD -W3 -w44456 -w44457 -w44458 $(DEFINES)
 CXXFLAGS      = -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc $(DEFINES)
-INCPATH       = -I..\Rack_Ray -I. -ID:\NEW\5.11.2\msvc2017_64\include -ID:\NEW\5.11.2\msvc2017_64\include\QtPrintSupport -ID:\NEW\5.11.2\msvc2017_64\include\QtWidgets -ID:\NEW\5.11.2\msvc2017_64\include\QtGui -ID:\NEW\5.11.2\msvc2017_64\include\QtANGLE -ID:\NEW\5.11.2\msvc2017_64\include\QtSql -ID:\NEW\5.11.2\msvc2017_64\include\QtCore -Irelease -I. -I\include -ID:\NEW\5.11.2\msvc2017_64\mkspecs\win32-msvc 
+INCPATH       = -I..\Rack_Ray -I. -ID:\NEW\5.11.2\msvc2017_64\include -ID:\NEW\5.11.2\msvc2017_64\include\QtPrintSupport -ID:\NEW\5.11.2\msvc2017_64\include\QtWidgets -ID:\NEW\5.11.2\msvc2017_64\include\QtMultimedia -ID:\NEW\5.11.2\msvc2017_64\include\QtGui -ID:\NEW\5.11.2\msvc2017_64\include\QtANGLE -ID:\NEW\5.11.2\msvc2017_64\include\QtSql -ID:\NEW\5.11.2\msvc2017_64\include\QtNetwork -ID:\NEW\5.11.2\msvc2017_64\include\QtCore -Irelease -I. -I\include -ID:\NEW\5.11.2\msvc2017_64\mkspecs\win32-msvc 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = /LIBPATH:D:\NEW\5.11.2\msvc2017_64\lib D:\NEW\5.11.2\msvc2017_64\lib\qtmain.lib /LIBPATH:C:\openssl\lib /LIBPATH:C:\Utils\my_sql\mysql-5.6.11-winx64\lib /LIBPATH:C:\Utils\postgresql\pgsql\lib shell32.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5PrintSupport.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Widgets.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Gui.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Sql.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Core.lib 
+LIBS          = /LIBPATH:D:\NEW\5.11.2\msvc2017_64\lib D:\NEW\5.11.2\msvc2017_64\lib\qtmain.lib /LIBPATH:C:\openssl\lib /LIBPATH:C:\Utils\my_sql\mysql-5.6.11-winx64\lib /LIBPATH:C:\Utils\postgresql\pgsql\lib shell32.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5PrintSupport.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Widgets.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Multimedia.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Gui.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Sql.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Network.lib D:\NEW\5.11.2\msvc2017_64\lib\Qt5Core.lib 
 QMAKE         = D:\NEW\5.11.2\msvc2017_64\bin\qmake.exe
 IDC           = idc
 IDL           = midl /NOLOGO
@@ -52,8 +52,12 @@ SOURCES       = ..\Rack_Ray\main.cpp \
 		..\Rack_Ray\type.cpp \
 		..\Rack_Ray\dialogtype.cpp \
 		..\Rack_Ray\notification.cpp \
-		..\Rack_Ray\container.cpp release\moc_ray.cpp \
-		release\moc_dialogtype.cpp
+		..\Rack_Ray\container.cpp \
+		..\Rack_Ray\Qss\Qss.cpp release\qrc_reso.cpp \
+		release\qrc_qss.cpp \
+		release\moc_ray.cpp \
+		release\moc_dialogtype.cpp \
+		release\moc_Qss.cpp
 OBJECTS       = release\main.obj \
 		release\ray.obj \
 		release\connxion.obj \
@@ -62,8 +66,12 @@ OBJECTS       = release\main.obj \
 		release\dialogtype.obj \
 		release\notification.obj \
 		release\container.obj \
+		release\Qss.obj \
+		release\qrc_reso.obj \
+		release\qrc_qss.obj \
 		release\moc_ray.obj \
-		release\moc_dialogtype.obj
+		release\moc_dialogtype.obj \
+		release\moc_Qss.obj
 
 DIST          =  ..\Rack_Ray\ray.h \
 		..\Rack_Ray\connxion.h \
@@ -71,14 +79,16 @@ DIST          =  ..\Rack_Ray\ray.h \
 		..\Rack_Ray\type.h \
 		..\Rack_Ray\dialogtype.h \
 		..\Rack_Ray\notification.h \
-		..\Rack_Ray\container.h ..\Rack_Ray\main.cpp \
+		..\Rack_Ray\container.h \
+		..\Rack_Ray\Qss\Qss.h ..\Rack_Ray\main.cpp \
 		..\Rack_Ray\ray.cpp \
 		..\Rack_Ray\connxion.cpp \
 		..\Rack_Ray\material.cpp \
 		..\Rack_Ray\type.cpp \
 		..\Rack_Ray\dialogtype.cpp \
 		..\Rack_Ray\notification.cpp \
-		..\Rack_Ray\container.cpp
+		..\Rack_Ray\container.cpp \
+		..\Rack_Ray\Qss\Qss.cpp
 QMAKE_TARGET  = Rack_Ray
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = Rack_Ray.exe
@@ -148,6 +158,26 @@ DESTDIR_TARGET = release\Rack_Ray.exe
 	$<
 <<
 
+{..\Rack_Ray\Qss}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{..\Rack_Ray\Qss}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{..\Rack_Ray\Qss}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{..\Rack_Ray\Qss}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
 ####### Build rules
 
 first: all
@@ -155,7 +185,7 @@ all: Makefile.Release  $(DESTDIR_TARGET)
 
 $(DESTDIR_TARGET): ui_ray.h ui_dialogtype.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-release\main.obj release\ray.obj release\connxion.obj release\material.obj release\type.obj release\dialogtype.obj release\notification.obj release\container.obj release\moc_ray.obj release\moc_dialogtype.obj
+release\main.obj release\ray.obj release\connxion.obj release\material.obj release\type.obj release\dialogtype.obj release\notification.obj release\container.obj release\Qss.obj release\qrc_reso.obj release\qrc_qss.obj release\moc_ray.obj release\moc_dialogtype.obj release\moc_Qss.obj
 $(LIBS)
 <<
 
@@ -165,10 +195,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Rack_Ray.zip $(SOURCES) $(DIST) ..\Rack_Ray\Rack_Ray.pro D:\NEW\5.11.2\msvc2017_64\mkspecs\features\spec_pre.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\common\angle.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\common\windows-vulkan.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\common\msvc-desktop.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\qconfig.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qt_functions.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qt_config.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash D:\NEW\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\common\msvc-version.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\toolchain.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\default_pre.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\win32\default_pre.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\resolve_config.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\default_post.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\build_pass.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qml_debug.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\precompile_header.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\warn_on.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qt.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\resources.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\moc.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\win32\opengl.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\uic.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qmake_use.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\file_copies.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\win32\windows.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\testcase_targets.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\exceptions.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\yacc.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\lex.prf ..\Rack_Ray\Rack_Ray.pro D:\NEW\5.11.2\msvc2017_64\lib\qtmain.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5PrintSupport.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Widgets.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Gui.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Sql.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Core.prl    D:\NEW\5.11.2\msvc2017_64\mkspecs\features\data\dummy.cpp ..\Rack_Ray\ray.h ..\Rack_Ray\connxion.h ..\Rack_Ray\material.h ..\Rack_Ray\type.h ..\Rack_Ray\dialogtype.h ..\Rack_Ray\notification.h ..\Rack_Ray\container.h  ..\Rack_Ray\main.cpp ..\Rack_Ray\ray.cpp ..\Rack_Ray\connxion.cpp ..\Rack_Ray\material.cpp ..\Rack_Ray\type.cpp ..\Rack_Ray\dialogtype.cpp ..\Rack_Ray\notification.cpp ..\Rack_Ray\container.cpp ..\Rack_Ray\ray.ui ..\Rack_Ray\dialogtype.ui    
+	$(ZIP) Rack_Ray.zip $(SOURCES) $(DIST) ..\Rack_Ray\Rack_Ray.pro D:\NEW\5.11.2\msvc2017_64\mkspecs\features\spec_pre.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\common\angle.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\common\windows-vulkan.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\common\msvc-desktop.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\qconfig.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qt_functions.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qt_config.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash D:\NEW\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\common\msvc-version.conf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\toolchain.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\default_pre.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\win32\default_pre.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\resolve_config.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\default_post.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\build_pass.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qml_debug.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\precompile_header.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\warn_on.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qt.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\resources.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\moc.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\win32\opengl.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\uic.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\qmake_use.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\file_copies.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\win32\windows.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\testcase_targets.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\exceptions.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\yacc.prf D:\NEW\5.11.2\msvc2017_64\mkspecs\features\lex.prf ..\Rack_Ray\Rack_Ray.pro ..\Rack_Ray\reso.qrc ..\Rack_Ray\Qss\qss.qrc D:\NEW\5.11.2\msvc2017_64\lib\qtmain.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5PrintSupport.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Widgets.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Multimedia.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Gui.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Sql.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Network.prl D:\NEW\5.11.2\msvc2017_64\lib\Qt5Core.prl   ..\Rack_Ray\reso.qrc ..\Rack_Ray\Qss\qss.qrc D:\NEW\5.11.2\msvc2017_64\mkspecs\features\data\dummy.cpp ..\Rack_Ray\ray.h ..\Rack_Ray\connxion.h ..\Rack_Ray\material.h ..\Rack_Ray\type.h ..\Rack_Ray\dialogtype.h ..\Rack_Ray\notification.h ..\Rack_Ray\container.h ..\Rack_Ray\Qss\Qss.h  ..\Rack_Ray\main.cpp ..\Rack_Ray\ray.cpp ..\Rack_Ray\connxion.cpp ..\Rack_Ray\material.cpp ..\Rack_Ray\type.cpp ..\Rack_Ray\dialogtype.cpp ..\Rack_Ray\notification.cpp ..\Rack_Ray\container.cpp ..\Rack_Ray\Qss\Qss.cpp ..\Rack_Ray\ray.ui ..\Rack_Ray\dialogtype.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.obj release\ray.obj release\connxion.obj release\material.obj release\type.obj release\dialogtype.obj release\notification.obj release\container.obj release\moc_ray.obj release\moc_dialogtype.obj
+	-$(DEL_FILE) release\main.obj release\ray.obj release\connxion.obj release\material.obj release\type.obj release\dialogtype.obj release\notification.obj release\container.obj release\Qss.obj release\qrc_reso.obj release\qrc_qss.obj release\moc_ray.obj release\moc_dialogtype.obj release\moc_Qss.obj
 	-$(DEL_FILE) release\Rack_Ray.exp
 
 distclean: clean 
@@ -186,17 +216,52 @@ benchmark: first
 
 compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
-compiler_rcc_make_all:
+compiler_rcc_make_all: release\qrc_reso.cpp release\qrc_qss.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) release\qrc_reso.cpp release\qrc_qss.cpp
+release\qrc_reso.cpp: ..\Rack_Ray\reso.qrc \
+		D:\NEW\5.11.2\msvc2017_64\bin\rcc.exe \
+		..\Rack_Ray\Qss\error.wav
+	D:\NEW\5.11.2\msvc2017_64\bin\rcc.exe -name reso ..\Rack_Ray\reso.qrc -o release\qrc_reso.cpp
+
+release\qrc_qss.cpp: ..\Rack_Ray\Qss\qss.qrc \
+		D:\NEW\5.11.2\msvc2017_64\bin\rcc.exe \
+		..\Rack_Ray\Qss\css\qss.css \
+		..\Rack_Ray\Qss\icon\downarrow.png \
+		..\Rack_Ray\Qss\icon\btn_max_down.png \
+		..\Rack_Ray\Qss\icon\radio.png \
+		..\Rack_Ray\Qss\icon\ver_scroll_top_arrow.png \
+		..\Rack_Ray\Qss\icon\btn_close_down.png \
+		..\Rack_Ray\Qss\icon\btn_mini_highlight.png \
+		..\Rack_Ray\Qss\icon\btn_mini_normal.png \
+		..\Rack_Ray\Qss\icon\btn_restore_down.png \
+		..\Rack_Ray\Qss\icon\radio_h.png \
+		..\Rack_Ray\Qss\icon\btn_max_normal.png \
+		..\Rack_Ray\Qss\icon\btn_max_highlight.png \
+		..\Rack_Ray\Qss\icon\checkbox_h.png \
+		..\Rack_Ray\Qss\icon\btn_close_normal.png \
+		..\Rack_Ray\Qss\icon\btn_restore_highlight.png \
+		..\Rack_Ray\Qss\icon\radio_p.png \
+		..\Rack_Ray\Qss\icon\hor_scroll_left_arrow.png \
+		..\Rack_Ray\Qss\icon\btn_restore_normal.png \
+		..\Rack_Ray\Qss\icon\btn_close_highlight.png \
+		..\Rack_Ray\Qss\icon\hor_scroll_right_arrow.png \
+		..\Rack_Ray\Qss\icon\checkbox_p.png \
+		..\Rack_Ray\Qss\icon\checkbox.png \
+		..\Rack_Ray\Qss\icon\btn_mini_down.png \
+		..\Rack_Ray\Qss\icon\ver_scroll_bottom_arrow.png \
+		..\Rack_Ray\Qss\icon\sizegrip.png
+	D:\NEW\5.11.2\msvc2017_64\bin\rcc.exe -name qss ..\Rack_Ray\Qss\qss.qrc -o release\qrc_qss.cpp
+
 compiler_moc_predefs_make_all: release\moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) release\moc_predefs.h
 release\moc_predefs.h: D:\NEW\5.11.2\msvc2017_64\mkspecs\features\data\dummy.cpp
 	cl -BxD:\NEW\5.11.2\msvc2017_64\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E D:\NEW\5.11.2\msvc2017_64\mkspecs\features\data\dummy.cpp 2>NUL >release\moc_predefs.h
 
-compiler_moc_header_make_all: release\moc_ray.cpp release\moc_dialogtype.cpp
+compiler_moc_header_make_all: release\moc_ray.cpp release\moc_dialogtype.cpp release\moc_Qss.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_ray.cpp release\moc_dialogtype.cpp
+	-$(DEL_FILE) release\moc_ray.cpp release\moc_dialogtype.cpp release\moc_Qss.cpp
 release\moc_ray.cpp: ..\Rack_Ray\material.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QString \
 		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstring.h \
@@ -318,13 +383,18 @@ release\moc_ray.cpp: ..\Rack_Ray\material.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		..\Rack_Ray\notification.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QWidget \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\QSound \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qsound.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h \
 		..\Rack_Ray\dialogtype.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QDialog \
 		..\Rack_Ray\type.h \
+		..\Rack_Ray\container.h \
 		..\Rack_Ray\ray.h \
 		release\moc_predefs.h \
 		D:\NEW\5.11.2\msvc2017_64\bin\moc.exe
-	D:\NEW\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Bsm/Desktop/Rack/RackoonStore/build-Rack_Ray-Desktop_Qt_5_11_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/NEW/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Bsm/Desktop/Rack/RackoonStore/Rack_Ray -ID:/NEW/5.11.2/msvc2017_64/include -ID:/NEW/5.11.2/msvc2017_64/include/QtPrintSupport -ID:/NEW/5.11.2/msvc2017_64/include/QtWidgets -ID:/NEW/5.11.2/msvc2017_64/include/QtGui -ID:/NEW/5.11.2/msvc2017_64/include/QtANGLE -ID:/NEW/5.11.2/msvc2017_64/include/QtSql -ID:/NEW/5.11.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt" ..\Rack_Ray\ray.h -o release\moc_ray.cpp
+	D:\NEW\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Bsm/Desktop/Rack/RackoonStore/build-Rack_Ray-Desktop_Qt_5_11_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/NEW/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Bsm/Desktop/Rack/RackoonStore/Rack_Ray -ID:/NEW/5.11.2/msvc2017_64/include -ID:/NEW/5.11.2/msvc2017_64/include/QtPrintSupport -ID:/NEW/5.11.2/msvc2017_64/include/QtWidgets -ID:/NEW/5.11.2/msvc2017_64/include/QtMultimedia -ID:/NEW/5.11.2/msvc2017_64/include/QtGui -ID:/NEW/5.11.2/msvc2017_64/include/QtANGLE -ID:/NEW/5.11.2/msvc2017_64/include/QtSql -ID:/NEW/5.11.2/msvc2017_64/include/QtNetwork -ID:/NEW/5.11.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt" ..\Rack_Ray\ray.h -o release\moc_ray.cpp
 
 release\moc_dialogtype.cpp: D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QDialog \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qdialog.h \
@@ -442,7 +512,125 @@ release\moc_dialogtype.cpp: D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QDialog 
 		..\Rack_Ray\dialogtype.h \
 		release\moc_predefs.h \
 		D:\NEW\5.11.2\msvc2017_64\bin\moc.exe
-	D:\NEW\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Bsm/Desktop/Rack/RackoonStore/build-Rack_Ray-Desktop_Qt_5_11_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/NEW/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Bsm/Desktop/Rack/RackoonStore/Rack_Ray -ID:/NEW/5.11.2/msvc2017_64/include -ID:/NEW/5.11.2/msvc2017_64/include/QtPrintSupport -ID:/NEW/5.11.2/msvc2017_64/include/QtWidgets -ID:/NEW/5.11.2/msvc2017_64/include/QtGui -ID:/NEW/5.11.2/msvc2017_64/include/QtANGLE -ID:/NEW/5.11.2/msvc2017_64/include/QtSql -ID:/NEW/5.11.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt" ..\Rack_Ray\dialogtype.h -o release\moc_dialogtype.cpp
+	D:\NEW\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Bsm/Desktop/Rack/RackoonStore/build-Rack_Ray-Desktop_Qt_5_11_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/NEW/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Bsm/Desktop/Rack/RackoonStore/Rack_Ray -ID:/NEW/5.11.2/msvc2017_64/include -ID:/NEW/5.11.2/msvc2017_64/include/QtPrintSupport -ID:/NEW/5.11.2/msvc2017_64/include/QtWidgets -ID:/NEW/5.11.2/msvc2017_64/include/QtMultimedia -ID:/NEW/5.11.2/msvc2017_64/include/QtGui -ID:/NEW/5.11.2/msvc2017_64/include/QtANGLE -ID:/NEW/5.11.2/msvc2017_64/include/QtSql -ID:/NEW/5.11.2/msvc2017_64/include/QtNetwork -ID:/NEW/5.11.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt" ..\Rack_Ray\dialogtype.h -o release\moc_dialogtype.cpp
+
+release\moc_Qss.cpp: D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QWidget \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qwidget.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtguiglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qconfig.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qtcore-config.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsystemdetection.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qprocessordetection.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qtypeinfo.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsysinfo.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qlogging.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qflags.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qatomic.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qbasicatomic.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qgenericatomic.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qglobalstatic.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmutex.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qnumeric.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qversiontagging.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtgui-config.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qwindowdefs.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qobjectdefs.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qnamespace.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qwindowdefs_win.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qobject.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstring.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qchar.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qbytearray.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qrefcount.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qarraydata.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringliteral.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringview.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringbuilder.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qlist.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qalgorithms.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qiterator.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qhashfunctions.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qpair.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qbytearraylist.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringlist.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qregexp.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringmatcher.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcoreevent.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qscopedpointer.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmetatype.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qvarlengtharray.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcontainerfwd.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qobject_impl.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmargins.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpaintdevice.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qrect.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsize.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qpoint.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpalette.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qcolor.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qrgb.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qrgba64.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qbrush.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qvector.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qmatrix.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpolygon.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qregion.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qdatastream.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qiodevice.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qline.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtransform.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpainterpath.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qimage.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpixelformat.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpixmap.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsharedpointer.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qshareddata.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qhash.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qfont.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qfontmetrics.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qfontinfo.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qsizepolicy.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qcursor.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qkeysequence.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qevent.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qvariant.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmap.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qdebug.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qtextstream.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qlocale.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qset.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcontiguouscache.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qurl.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qurlquery.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qfile.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qfiledevice.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qvector2d.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtouchdevice.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QMainWindow \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qicon.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QDialog \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qdialog.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QMessageBox \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qmessagebox.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QFrame \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\Rack_Ray\Qss\Qss.h \
+		release\moc_predefs.h \
+		D:\NEW\5.11.2\msvc2017_64\bin\moc.exe
+	D:\NEW\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Bsm/Desktop/Rack/RackoonStore/build-Rack_Ray-Desktop_Qt_5_11_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/NEW/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Bsm/Desktop/Rack/RackoonStore/Rack_Ray -ID:/NEW/5.11.2/msvc2017_64/include -ID:/NEW/5.11.2/msvc2017_64/include/QtPrintSupport -ID:/NEW/5.11.2/msvc2017_64/include/QtWidgets -ID:/NEW/5.11.2/msvc2017_64/include/QtMultimedia -ID:/NEW/5.11.2/msvc2017_64/include/QtGui -ID:/NEW/5.11.2/msvc2017_64/include/QtANGLE -ID:/NEW/5.11.2/msvc2017_64/include/QtSql -ID:/NEW/5.11.2/msvc2017_64/include/QtNetwork -ID:/NEW/5.11.2/msvc2017_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt" ..\Rack_Ray\Qss\Qss.h -o release\moc_Qss.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -465,7 +653,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 
 
@@ -593,11 +781,17 @@ release\main.obj: ..\Rack_Ray\main.cpp ..\Rack_Ray\ray.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		..\Rack_Ray\notification.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QWidget \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\QSound \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qsound.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h \
 		..\Rack_Ray\dialogtype.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QDialog \
 		..\Rack_Ray\type.h \
+		..\Rack_Ray\container.h \
 		..\Rack_Ray\connxion.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtSql\QSqlDatabase \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QFile \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QApplication \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qapplication.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcoreapplication.h \
@@ -728,9 +922,14 @@ release\ray.obj: ..\Rack_Ray\ray.cpp ..\Rack_Ray\ray.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		..\Rack_Ray\notification.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QWidget \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\QSound \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qsound.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h \
 		..\Rack_Ray\dialogtype.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QDialog \
 		..\Rack_Ray\type.h \
+		..\Rack_Ray\container.h \
 		ui_ray.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QVariant \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QApplication \
@@ -798,7 +997,22 @@ release\ray.obj: ..\Rack_Ray\ray.cpp ..\Rack_Ray\ray.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtPrintSupport\QPrintDialog \
 		D:\NEW\5.11.2\msvc2017_64\include\QtPrintSupport\qprintdialog.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtPrintSupport\qabstractprintdialog.h \
-		..\Rack_Ray\add_type.h
+		..\Rack_Ray\add_type.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\QMediaPlayer \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qmediaplayer.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qmediaobject.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qmultimedia.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qmediacontent.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qmediaresource.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtNetwork\qnetworkrequest.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtNetwork\qtnetworkglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtNetwork\qtnetwork-config.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QSharedDataPointer \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QUrl \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qmediaenumdebug.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h
 
 release\connxion.obj: ..\Rack_Ray\connxion.cpp ..\Rack_Ray\connxion.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtSql\QSqlDatabase \
@@ -1198,7 +1412,12 @@ release\dialogtype.obj: ..\Rack_Ray\dialogtype.cpp ..\Rack_Ray\dialogtype.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtSql\qsqlerror.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QMessageBox \
 		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qmessagebox.h \
-		..\Rack_Ray\notification.h
+		..\Rack_Ray\notification.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\QSound \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qsound.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h \
+		..\Rack_Ray\container.h
 
 release\notification.obj: ..\Rack_Ray\notification.cpp ..\Rack_Ray\notification.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QString \
@@ -1346,9 +1565,176 @@ release\container.obj: ..\Rack_Ray\container.cpp ..\Rack_Ray\container.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsharedpointer.h \
 		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h
 
+release\Qss.obj: ..\Rack_Ray\Qss\Qss.cpp ..\Rack_Ray\Qss\Qss.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QWidget \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qwidget.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtguiglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qglobal.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qconfig.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qtcore-config.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsystemdetection.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qprocessordetection.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qtypeinfo.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsysinfo.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qlogging.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qflags.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qatomic.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qbasicatomic.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qgenericatomic.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qglobalstatic.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmutex.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qnumeric.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qversiontagging.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtgui-config.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qwindowdefs.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qobjectdefs.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qnamespace.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qwindowdefs_win.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qobject.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstring.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qchar.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qbytearray.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qrefcount.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qarraydata.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringliteral.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringview.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringbuilder.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qlist.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qalgorithms.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qiterator.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qhashfunctions.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qpair.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qbytearraylist.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringlist.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qregexp.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qstringmatcher.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcoreevent.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qscopedpointer.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmetatype.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qvarlengtharray.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcontainerfwd.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qobject_impl.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmargins.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpaintdevice.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qrect.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsize.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qpoint.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpalette.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qcolor.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qrgb.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qrgba64.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qbrush.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qvector.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qmatrix.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpolygon.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qregion.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qdatastream.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qiodevice.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qline.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtransform.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpainterpath.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qimage.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpixelformat.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpixmap.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsharedpointer.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qshareddata.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qhash.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qfont.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qfontmetrics.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qfontinfo.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qsizepolicy.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qcursor.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qkeysequence.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qevent.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qvariant.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmap.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qdebug.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qtextstream.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qlocale.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qset.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcontiguouscache.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qurl.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qurlquery.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qfile.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qfiledevice.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qvector2d.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtouchdevice.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QMainWindow \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qicon.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QDialog \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qdialog.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QMessageBox \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qmessagebox.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QFrame \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qframe.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QPushButton \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QLabel \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QBoxLayout \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QStyleOption \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qvalidator.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qslider.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\QPainter \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpainter.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qtextoption.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qpen.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\QMouseEvent \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QApplication \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qeventloop.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtWidgets\QDesktopWidget \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QtMath \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qmath.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QPropertyAnimation \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qpropertyanimation.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qvariantanimation.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qeasingcurve.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qabstractanimation.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QParallelAnimationGroup \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qparallelanimationgroup.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\qanimationgroup.h \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QDebug \
+		D:\NEW\5.11.2\msvc2017_64\include\QtCore\QFile
+
+release\qrc_reso.obj: release\qrc_reso.cpp 
+
+release\qrc_qss.obj: release\qrc_qss.cpp 
+
 release\moc_ray.obj: release\moc_ray.cpp 
 
 release\moc_dialogtype.obj: release\moc_dialogtype.cpp 
+
+release\moc_Qss.obj: release\moc_Qss.cpp 
 
 ####### Install
 

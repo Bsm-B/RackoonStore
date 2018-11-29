@@ -6,12 +6,15 @@
 #include "add_type.h"
 
 
+
 Ray::Ray(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Ray)
 {
     ui->setupUi(this);
-
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(refrech()));
+    timer->start(1000);
 }
 
 Ray::~Ray()
@@ -24,7 +27,7 @@ void Ray::showEvent(QShowEvent* event)
 {
 
      QWidget::showEvent( event );
-     ui->tableView_2->setModel(C.Display());
+     #include <QTimer>
      ui->comboBox->setModel(C.Get_Prodid());
      ui->tableView->setModel(N.Display());
      ui->comboBox_type->setModel(M.Get_Type());
@@ -33,6 +36,25 @@ void Ray::showEvent(QShowEvent* event)
      ui->label_3->setText(QString::number(M.Get_Sum()));
      ui->label_5->setText(QString::number(M.Get_Count()));
      ui->label_14->setText(QString::number(M.Get_Qtn()));
+
+     ui->label_16->setText("<img src=':/qss/Rak.png'> ");
+     ui->label_19->setText("<img src=':/qss/Rak.png'> ");
+     ui->label_22->setText("<img src=':/qss/Rak.png'> ");
+     ui->label_23->setText("<img src=':/qss/Rak.png'> ");
+     ui->label_24->setText("<img src=':/qss/Rak.png'> ");
+     ui->label_25->setText("<img src=':/qss/Rak.png'> ");
+     ui->label_26->setText("<img src=':/qss/Rak.png'> ");
+     ui->label_27->setText("<img src=':/qss/Rak.png'> ");
+     ui->label_28->setText("<img src=':/qss/Rak.png'> ");
+     ui->label_29->setText("<img src=':/qss/Rak.png'> ");
+
+}
+
+void Ray::refrech()
+{
+     ui->tableView->setModel(N.Display());
+       ui->Tab_Prod->setModel(M.Display());
+         ui->Tab_Prod->setModel(C.Display());
 
 }
 
@@ -294,4 +316,8 @@ void Ray::on_pushButton_clicked()
     N.Delete(x);
     ui->tableView->setModel(N.Display());
     ui->lineEdit_5->setText("0");
+}
+
+void Ray::on_pushButton_11_clicked()
+{
 }

@@ -32,6 +32,16 @@ public:
     QTabWidget *tabWidget;
     QWidget *tab;
     QGroupBox *groupBox_5;
+    QLabel *label_29;
+    QLabel *label_28;
+    QLabel *label_16;
+    QLabel *label_22;
+    QLabel *label_19;
+    QLabel *label_23;
+    QLabel *label_26;
+    QLabel *label_25;
+    QLabel *label_24;
+    QLabel *label_27;
     QGroupBox *groupBox_6;
     QTabWidget *tabWidget_2;
     QWidget *tab_3;
@@ -115,29 +125,60 @@ public:
     {
         if (Ray->objectName().isEmpty())
             Ray->setObjectName(QStringLiteral("Ray"));
-        Ray->resize(1324, 666);
+        Ray->resize(1097, 764);
+        Ray->setStyleSheet(QStringLiteral(""));
         tabWidget = new QTabWidget(Ray);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 10, 1301, 651));
+        tabWidget->setGeometry(QRect(80, 30, 1001, 651));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         groupBox_5 = new QGroupBox(tab);
         groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
         groupBox_5->setGeometry(QRect(10, 10, 651, 291));
+        label_29 = new QLabel(groupBox_5);
+        label_29->setObjectName(QStringLiteral("label_29"));
+        label_29->setGeometry(QRect(160, 30, 64, 64));
+        label_28 = new QLabel(groupBox_5);
+        label_28->setObjectName(QStringLiteral("label_28"));
+        label_28->setGeometry(QRect(160, 210, 64, 64));
+        label_16 = new QLabel(groupBox_5);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setGeometry(QRect(370, 110, 64, 64));
+        label_22 = new QLabel(groupBox_5);
+        label_22->setObjectName(QStringLiteral("label_22"));
+        label_22->setGeometry(QRect(470, 30, 64, 64));
+        label_19 = new QLabel(groupBox_5);
+        label_19->setObjectName(QStringLiteral("label_19"));
+        label_19->setGeometry(QRect(370, 210, 64, 64));
+        label_23 = new QLabel(groupBox_5);
+        label_23->setObjectName(QStringLiteral("label_23"));
+        label_23->setGeometry(QRect(260, 210, 64, 64));
+        label_26 = new QLabel(groupBox_5);
+        label_26->setObjectName(QStringLiteral("label_26"));
+        label_26->setGeometry(QRect(260, 110, 64, 64));
+        label_25 = new QLabel(groupBox_5);
+        label_25->setObjectName(QStringLiteral("label_25"));
+        label_25->setGeometry(QRect(160, 110, 64, 64));
+        label_24 = new QLabel(groupBox_5);
+        label_24->setObjectName(QStringLiteral("label_24"));
+        label_24->setGeometry(QRect(470, 110, 64, 64));
+        label_27 = new QLabel(groupBox_5);
+        label_27->setObjectName(QStringLiteral("label_27"));
+        label_27->setGeometry(QRect(470, 210, 64, 64));
         groupBox_6 = new QGroupBox(tab);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
-        groupBox_6->setGeometry(QRect(10, 310, 881, 311));
+        groupBox_6->setGeometry(QRect(10, 310, 971, 311));
         tabWidget_2 = new QTabWidget(groupBox_6);
         tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
-        tabWidget_2->setGeometry(QRect(10, 20, 861, 281));
+        tabWidget_2->setGeometry(QRect(10, 20, 951, 281));
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
         tableView_2 = new QTableView(tab_3);
         tableView_2->setObjectName(QStringLiteral("tableView_2"));
-        tableView_2->setGeometry(QRect(10, 40, 581, 201));
+        tableView_2->setGeometry(QRect(10, 40, 661, 201));
         formLayoutWidget_2 = new QWidget(tab_3);
         formLayoutWidget_2->setObjectName(QStringLiteral("formLayoutWidget_2"));
-        formLayoutWidget_2->setGeometry(QRect(600, 40, 241, 201));
+        formLayoutWidget_2->setGeometry(QRect(680, 40, 261, 201));
         formLayout_2 = new QFormLayout(formLayoutWidget_2);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -195,7 +236,7 @@ public:
 
         layoutWidget = new QWidget(tab_3);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 0, 851, 31));
+        layoutWidget->setGeometry(QRect(0, 0, 941, 33));
         horizontalLayout_9 = new QHBoxLayout(layoutWidget);
         horizontalLayout_9->setSpacing(6);
         horizontalLayout_9->setContentsMargins(11, 11, 11, 11);
@@ -225,7 +266,7 @@ public:
         tableView->setGeometry(QRect(10, 50, 291, 241));
         layoutWidget1 = new QWidget(groupBox_7);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 20, 291, 25));
+        layoutWidget1->setGeometry(QRect(10, 20, 291, 35));
         horizontalLayout_8 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_8->setSpacing(6);
         horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
@@ -252,7 +293,7 @@ public:
         tab_2->setObjectName(QStringLiteral("tab_2"));
         groupBox = new QGroupBox(tab_2);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(10, 10, 951, 80));
+        groupBox->setGeometry(QRect(10, 10, 971, 80));
         horizontalLayoutWidget = new QWidget(groupBox);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(10, 30, 391, 41));
@@ -278,7 +319,7 @@ public:
 
         horizontalLayoutWidget_2 = new QWidget(groupBox);
         horizontalLayoutWidget_2->setObjectName(QStringLiteral("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(410, 30, 531, 41));
+        horizontalLayoutWidget_2->setGeometry(QRect(410, 30, 551, 41));
         horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget_2);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -311,10 +352,10 @@ public:
 
         groupBox_3 = new QGroupBox(tab_2);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(10, 450, 951, 51));
+        groupBox_3->setGeometry(QRect(10, 450, 971, 81));
         layoutWidget2 = new QWidget(groupBox_3);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(50, 20, 881, 21));
+        layoutWidget2->setGeometry(QRect(50, 20, 881, 33));
         horizontalLayout_4 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -352,10 +393,10 @@ public:
 
         groupBox_2 = new QGroupBox(tab_2);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(10, 90, 951, 61));
+        groupBox_2->setGeometry(QRect(10, 90, 971, 61));
         horizontalLayoutWidget_3 = new QWidget(groupBox_2);
         horizontalLayoutWidget_3->setObjectName(QStringLiteral("horizontalLayoutWidget_3"));
-        horizontalLayoutWidget_3->setGeometry(QRect(10, 20, 931, 31));
+        horizontalLayoutWidget_3->setGeometry(QRect(10, 20, 931, 33));
         horizontalLayout_3 = new QHBoxLayout(horizontalLayoutWidget_3);
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -383,13 +424,13 @@ public:
 
         groupBox_4 = new QGroupBox(tab_2);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(10, 160, 951, 291));
+        groupBox_4->setGeometry(QRect(10, 160, 971, 291));
         Tab_Prod = new QTableView(groupBox_4);
         Tab_Prod->setObjectName(QStringLiteral("Tab_Prod"));
-        Tab_Prod->setGeometry(QRect(290, 10, 651, 271));
+        Tab_Prod->setGeometry(QRect(340, 10, 621, 271));
         formLayoutWidget = new QWidget(groupBox_4);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(10, 20, 271, 261));
+        formLayoutWidget->setGeometry(QRect(10, 20, 316, 211));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
@@ -492,6 +533,16 @@ public:
     {
         Ray->setWindowTitle(QApplication::translate("Ray", "Ray", nullptr));
         groupBox_5->setTitle(QApplication::translate("Ray", "Schema - 2D ", nullptr));
+        label_29->setText(QApplication::translate("Ray", "TextLabel", nullptr));
+        label_28->setText(QApplication::translate("Ray", "TextLabel", nullptr));
+        label_16->setText(QApplication::translate("Ray", "TextLabel", nullptr));
+        label_22->setText(QApplication::translate("Ray", "TextLabel", nullptr));
+        label_19->setText(QApplication::translate("Ray", "TextLabel", nullptr));
+        label_23->setText(QApplication::translate("Ray", "TextLabel", nullptr));
+        label_26->setText(QApplication::translate("Ray", "TextLabel", nullptr));
+        label_25->setText(QApplication::translate("Ray", "TextLabel", nullptr));
+        label_24->setText(QApplication::translate("Ray", "TextLabel", nullptr));
+        label_27->setText(QApplication::translate("Ray", "TextLabel", nullptr));
         groupBox_6->setTitle(QApplication::translate("Ray", "Mangement", nullptr));
         label_15->setText(QApplication::translate("Ray", "Container ID :    ", nullptr));
         label_17->setText(QApplication::translate("Ray", "Item ID :", nullptr));

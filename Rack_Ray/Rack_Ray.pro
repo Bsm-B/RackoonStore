@@ -30,14 +30,16 @@ SOURCES += \
     connxion.cpp \
     material.cpp \
     type.cpp \
-    dialogtype.cpp
+    dialogtype.cpp \
+    notification.cpp
 
 HEADERS += \
         ray.h \
     connxion.h \
     material.h \
     type.h \
-    dialogtype.h
+    dialogtype.h \
+    notification.h
 
 FORMS += \
         ray.ui \

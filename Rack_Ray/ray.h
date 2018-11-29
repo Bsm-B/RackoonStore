@@ -1,6 +1,7 @@
 #ifndef RAY_H
 #define RAY_H
 #include "material.h"
+#include "notification.h"
 #include <QMessageBox>
 #include <QWidget>
 #include "dialogtype.h"
@@ -46,6 +47,7 @@ private slots:
 private:
     Ui::Ray *ui;
     Material M;
+    Notification N;
     DialogType * D;
 };
 

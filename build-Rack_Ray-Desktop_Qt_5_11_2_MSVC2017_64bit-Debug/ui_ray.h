@@ -31,6 +31,9 @@ class Ui_Ray
 public:
     QTabWidget *tabWidget;
     QWidget *tab;
+    QGroupBox *groupBox_5;
+    QTableView *tableView;
+    QGroupBox *groupBox_6;
     QWidget *tab_2;
     QGroupBox *groupBox;
     QWidget *horizontalLayoutWidget;
@@ -86,12 +89,21 @@ public:
     {
         if (Ray->objectName().isEmpty())
             Ray->setObjectName(QStringLiteral("Ray"));
-        Ray->resize(984, 562);
+        Ray->resize(1324, 666);
         tabWidget = new QTabWidget(Ray);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 10, 971, 541));
+        tabWidget->setGeometry(QRect(10, 10, 1301, 651));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
+        groupBox_5 = new QGroupBox(tab);
+        groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
+        groupBox_5->setGeometry(QRect(10, 10, 651, 321));
+        tableView = new QTableView(groupBox_5);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(10, 20, 631, 291));
+        groupBox_6 = new QGroupBox(tab);
+        groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
+        groupBox_6->setGeometry(QRect(10, 340, 801, 271));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -326,7 +338,7 @@ public:
 
         retranslateUi(Ray);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Ray);
@@ -335,6 +347,8 @@ public:
     void retranslateUi(QWidget *Ray)
     {
         Ray->setWindowTitle(QApplication::translate("Ray", "Ray", nullptr));
+        groupBox_5->setTitle(QApplication::translate("Ray", "Schema - 2D ", nullptr));
+        groupBox_6->setTitle(QApplication::translate("Ray", "GroupBox", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Ray", "Rayon", nullptr));
         groupBox->setTitle(QApplication::translate("Ray", "Tools", nullptr));
         lineEdit->setText(QApplication::translate("Ray", "Search By ID", nullptr));

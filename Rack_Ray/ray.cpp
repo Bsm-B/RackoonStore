@@ -4,6 +4,7 @@
 #include <QTextDocument>
 #include <QPrintDialog>
 #include "add_type.h"
+
 Ray::Ray(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Ray)
@@ -28,6 +29,7 @@ void Ray::showEvent(QShowEvent* event)
      ui->label_3->setText(QString::number(M.Get_Sum()));
      ui->label_5->setText(QString::number(M.Get_Count()));
      ui->label_14->setText(QString::number(M.Get_Qtn()));
+
 }
 
 void Ray::on_Btn_Add_clicked()

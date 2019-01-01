@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "arduino.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +17,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void update_label();
+
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
@@ -72,8 +75,16 @@ private slots:
 
     void on_pushButton_26_clicked();
 
+    void on_pushButton_29_clicked();
+
+
+    void on_comboBox_activated(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
+    QString rfid ;
+    QByteArray data;
+    Arduino A;
 };
 
 #endif // MAINWINDOW_H

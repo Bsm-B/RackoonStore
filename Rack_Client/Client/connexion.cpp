@@ -10,9 +10,9 @@ Connexion::Connexion()
 bool Connexion::ouvrirConnexion()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-    db.setDatabaseName("Source_Projet2A");
-    db.setUserName("klod");
-    db.setPassword("test");
+    db.setDatabaseName("Rack001");
+    db.setUserName("ad1");//inserer nom de l'utilisateur
+    db.setPassword("rackteam001");//inserer mot de passe de cet utilisateur
         if(db.open())
         {
             qDebug()<<"Connected";
